@@ -26,14 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define EE_HANDS
 
-#define ONESHOT_TAP_TOGGLE 3
-
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-#define LEADER_TIMEOUT 10
+#define LEADER_TIMEOUT 250
 
-#define QUERTY_LAYER 2
 #define DVORAK_LAYER 0
 #define CANARY_LAYER 1
+#define QWERTY_LAYER 2
 
 #define BASE_LAYER DVORAK_LAYER
 
@@ -45,6 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define FN_LAYER 7
 #define SOUND_LAYER 8
 #define MOUSE_LAYER 9
+#define DESK_LAYER 10
 
 #define SFT_ESC SFT_T(KC_ESC)
 #define CTL_BSPC CTL_T(KC_BSPC)
