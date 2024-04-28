@@ -4,7 +4,7 @@ enum combo_events {
     RESET_LAYER,
 };
 
-const uint16_t PROGMEM reset_combo[] = {MT(MOD_LGUI, KC_SPC), LT(NUMROW_LAYER, KC_ENT), COMBO_END};
+const uint16_t PROGMEM reset_combo[] = {LT(DESK_LAYER, KC_SPC), LT(NUMROW_LAYER, KC_ENT), COMBO_END};
 
 combo_t key_combos[] = {
     [RESET_LAYER] = COMBO_ACTION(reset_combo),

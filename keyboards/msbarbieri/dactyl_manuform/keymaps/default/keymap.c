@@ -1,27 +1,27 @@
 #include QMK_KEYBOARD_H
 #include "config.h"
 
-#include "custom_key.c"
 #include "combo.c"
 #include "tap_dance.c"
+#include "custom_key.c"
 #include "leader.c"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [DVORAK_LAYER] = LAYOUT_manuform_let(KC_TAB, MT(MOD_LCTL, KC_COLN), MT(MOD_LALT, KC_COMM), MT(MOD_LSFT, KC_DOT), KC_P, KC_Y, /** Split **/ KC_F, KC_G, MT(MOD_RSFT, KC_C), MT(MOD_RALT, KC_R), KC_L, KC_SCLN,                                  // high row
-                                         KC_ESC, KC_A, KC_O, KC_E, KC_U, KC_I, /** Split **/ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS,                                                                                                               // home row
-                                         OSM(MOD_LSFT), KC_QUOT, KC_Q, KC_J, KC_K, KC_X, /** Split **/ KC_B, KC_M, KC_W, KC_V, KC_Z, OSM(MOD_RSFT),                                                                                                // lower row
-                                         OSM(MOD_LCTL), KC_NO, KC_NO, OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL), // thumb cluster
-                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, OSM(MOD_LALT)),                                                                                                       // thumb cluster
-    [CANARY_LAYER] = LAYOUT_manuform_let(KC_TAB, KC_W, KC_L, KC_Y, KC_P, KC_B, /** Split **/ KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_SCLN,                                                                                                             // high row
-                                         KC_ESC, KC_C, KC_R, KC_S, KC_T, KC_G, /** Split **/ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS,                                                                                                               // home row
-                                         OSM(MOD_LSFT), KC_Q, KC_J, KC_V, KC_D, KC_K, /** Split **/ KC_X, KC_H, KC_SLSH, KC_COMM, KC_DOT, OSM(MOD_RSFT),                                                                                           // lower row
-                                         OSM(MOD_LCTL), KC_NO, KC_NO, OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL), // base row
-                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, OSM(MOD_RALT)),                                                                                                       // thumb cluster
-    [QWERTY_LAYER] = LAYOUT_manuform_let(KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, /** Split **/ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_SCLN,                                                                                                                // high row
-                                         KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, /** Split **/ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,                                                                                                             // home row
-                                         OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, /** Split **/ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),                                                                                           // lower row
-                                         OSM(MOD_LCTL), KC_NO, KC_NO, OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL), // base row
-                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, OSM(MOD_RALT)),                                                                                                       // thumb cluster
+    [DVORAK_LAYER] = LAYOUT_manuform_let(KC_TAB, KC_COLN, KC_COMM, KC_DOT, KC_P, KC_Y, /** Split **/ KC_F, KC_G, KC_C, KC_R, KC_L, KC_SCLN,                                                                                                                        // high row
+                                         KC_ESC, MT(MOD_LCTL, KC_A), MT(MOD_LALT, KC_O), MT(MOD_LSFT, KC_E), MT(MOD_LGUI, KC_U), KC_I, /** Split **/ KC_D, MT(MOD_LGUI, KC_H), MT(MOD_RSFT, KC_T), MT(MOD_RALT, KC_N), MT(MOD_RCTL, KC_S), KC_MINUS,               // home row
+                                         OSM(MOD_LSFT), KC_QUOT, KC_Q, KC_J, KC_K, KC_X, /** Split **/ KC_B, KC_M, KC_W, KC_V, KC_Z, OSM(MOD_RSFT),                                                                                                                // lower row
+                                         OSM(MOD_LCTL), OSM(MOD_LGUI), OSM(MOD_LGUI), OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL), // thumb cluster
+                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, KC_DEL),                                                                                                                              // thumb cluster
+    [CANARY_LAYER] = LAYOUT_manuform_let(KC_TAB, KC_W, KC_L, KC_Y, KC_P, KC_B, /** Split **/ KC_Z, KC_F, KC_O, KC_U, KC_QUOT, KC_SCLN,                                                                                                                             // high row
+                                         KC_ESC, KC_C, KC_R, KC_S, KC_T, KC_G, /** Split **/ KC_D, KC_H, KC_T, KC_N, KC_S, KC_MINUS,                                                                                                                               // home row
+                                         OSM(MOD_LSFT), KC_Q, KC_J, KC_V, KC_D, KC_K, /** Split **/ KC_X, KC_H, KC_SLSH, KC_COMM, KC_DOT, OSM(MOD_RSFT),                                                                                                           // lower row
+                                         OSM(MOD_LCTL), OSM(MOD_LGUI), KC_NO, OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL),         // base row
+                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, KC_DEL),                                                                                                                              // thumb cluster
+    [QWERTY_LAYER] = LAYOUT_manuform_let(KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, /** Split **/ KC_Y, KC_U, KC_I, KC_O, KC_P, KC_SCLN,                                                                                                                                // high row
+                                         KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, /** Split **/ KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,                                                                                                                             // home row
+                                         OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, /** Split **/ KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),                                                                                                           // lower row
+                                         OSM(MOD_LCTL), OSM(MOD_LGUI), KC_NO, OSM(MOD_LALT), LT(DESK_LAYER, KC_SPC), TD(LEADER_TAP), DF(CANARY_LAYER), /** Split **/ KC_NO, KC_BSPC, LT(NUMROW_LAYER, KC_ENT), OSM(MOD_RALT), KC_NO, KC_NO, OSM(MOD_LCTL),         // base row
+                                         OSM(MOD_LCTL), DF(DVORAK_LAYER), DF(QWERTY_LAYER), /** Split **/ KC_GRAVE, KC_CAPS, KC_DEL),                                                                                                                              // thumb cluster
 
     [SYMBOLS_LAYER] = LAYOUT_manuform_let(_______, _______, KC_SLASH, LSFT(KC_LBRC), LSFT(KC_1), LSFT(KC_COMM), /** Split **/ LSFT(KC_DOT), LSFT(KC_8), LSFT(KC_RBRC), KC_BSLS, LSFT(KC_6), _______,         // high row
                                           TG(SYMBOLS_LAYER), KC_GRAVE, KC_EQUAL, LSFT(KC_9), LSFT(KC_7), _______, /** Split **/ _______, LSFT(KC_BSLS), LSFT(KC_0), LSFT(KC_EQUAL), LSFT(KC_GRAVE), _______, // home row
@@ -39,16 +39,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                          _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______,                                 // lower row
                                          _______, _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______, _______,               // thumb cluster
                                          _______, _______, _______, /** Split **/ _______, _______, _______),
-    [NAV_LAYER]    = LAYOUT_manuform_let(_______, _______, _______, _______, _______, _______, /** Split **/ _______, KC_HOME, KC_UP, KC_END, _______, _______,                        // high row
-                                         _______, _______, _______, _______, _______, _______, /** Split **/ _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______,                    // home row
-                                         _______, _______, _______, _______, _______, _______, /** Split **/ _______, KC_PGDN, _______, KC_PGUP, _______, _______,                     // lower row
-                                         _______, _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______, _______,   // lower row
-                                         _______, _______, _______, _______, _______, _______),                                                                                        // thumb cluster
+    [NAV_LAYER]    = LAYOUT_manuform_let(_______, _______, KC_HOME, KC_UP, KC_END, _______, /** Split **/ _______, _______, _______, _______, KC_RIGHT, _______,                       // high row
+                                         _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGUP, /** Split **/ _______, KC_LEFT, _______, _______, _______, _______,                    // home row
+                                         _______, _______, _______, KC_DOWN, KC_UP, _______, /** Split **/ _______, _______, _______, _______, _______, _______,                       // lower row
+                                         _______, _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, KC_0, _______, _______, _______,      // base row
+                                         _______, _______, _______, /** Split **/ _______, _______, _______),                                                                          // thumb cluster
     [MOUSE_LAYER]  = LAYOUT_manuform_let(_______, _______, _______, _______, _______, _______, /** Split **/ _______, KC_MS_BTN1, KC_MS_UP, KC_MS_BTN2, _______, _______,              // high row
                                          _______, KC_MS_WH_DOWN, KC_ACL0, KC_ACL1, KC_ACL2, _______, /** Split **/ _______, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_UP, _______, // home row
                                          _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______,                     // lower row
                                          _______, _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______, _______,   // lower row
-                                         _______, _______, _______, _______, _______, _______),                                                                                        // thumb cluster
+                                         _______, _______, _______, /** Split **/ _______, _______, _______),                                                                          // thumb cluster
 
     [SOUND_LAYER] = LAYOUT_manuform_let(_______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______,                                                             // row high
                                         _______, _______, KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, _______, /** Split **/ _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, _______, _______, // row home
