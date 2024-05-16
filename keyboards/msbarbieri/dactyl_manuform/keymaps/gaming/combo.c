@@ -1,11 +1,10 @@
 // combo started
 
-#include "config.h"
 enum combo_events { RESET_LAYER, RESET_MOUSE_LAYER, LEADER_COMBO };
 
-const uint16_t PROGMEM reset_combo[]       = {LT(DESK_LAYER, KC_SPC), LT(NUMROW_LAYER, KC_ENT), COMBO_END};
+const uint16_t PROGMEM reset_combo[]       = {LT(SYMBOLS_LAYER, KC_SPC), LT(NUMROW_LAYER, KC_ENT), COMBO_END};
 const uint16_t PROGMEM reset_mouse_combo[] = {KC_MS_BTN2, KC_MS_BTN1, COMBO_END};
-const uint16_t PROGMEM leader_combo[]      = {OSL(SYMBOLS_LAYER), KC_BSPC, COMBO_END};
+const uint16_t PROGMEM leader_combo[]      = {LT(DESK_LAYER, KC_DEL), KC_BSPC, COMBO_END};
 
 combo_t key_combos[] = {
     [RESET_LAYER]       = COMBO_ACTION(reset_combo),
