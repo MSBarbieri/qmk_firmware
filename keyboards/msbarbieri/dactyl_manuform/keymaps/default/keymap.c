@@ -32,9 +32,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // [SYMBOLS_LAYER] = LAYOUT_manuform_let(_______, KC_COLN, KC_SLASH, LSFT(KC_LBRC), LSFT(KC_1), LSFT(KC_COMM), /** Split **/ LSFT(KC_DOT), LSFT(KC_8), LSFT(KC_RBRC), KC_BSLS, LSFT(KC_6), _______,// lower row
     //                                       TG(SYMBOLS_LAYER), KC_GRAVE, KC_EQUAL, LSFT(KC_9), LSFT(KC_7), _______, /** Split **/KC_QUES, LSFT(KC_BSLS), LSFT(KC_0), LSFT(KC_EQUAL), LSFT(KC_GRAVE), _______,
     //                                       _______, _______, LSFT(KC_2), KC_LBRC, LSFT(KC_3), _______, /** Split **/ _______, LSFT(KC_4), KC_RBRC, LSFT(KC_5), KC_COMM, KC_DOT,        // lower row
-    [SYMBOLS_LAYER] = LAYOUT_manuform_let(LSFT(KC_GRAVE), KC_COLN, KC_COMM, KC_DOT, LSFT(KC_1), LSFT(KC_7), /** Split **/ LSFT(KC_BSLS), LSFT(KC_2), LSFT(KC_5), KC_SLSH, KC_BSLS, LSFT(KC_6),         // high row
+    [SYMBOLS_LAYER] = LAYOUT_manuform_let(_______, KC_COLN, KC_COMM, KC_DOT, LSFT(KC_1), LSFT(KC_7), /** Split **/ LSFT(KC_BSLS), LSFT(KC_2), LSFT(KC_5), KC_SLSH, KC_BSLS, _______,                   // high row
                                           LSFT(KC_4), LSFT(KC_EQUAL), KC_LBRC, LSFT(KC_LBRC), LSFT(KC_9), LSFT(KC_3), /** Split **/ KC_EQUAL, LSFT(KC_0), LSFT(KC_RBRC), KC_RBRC, LSFT(KC_8), _______, // home row
-                                          _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, _______, _______, _______, _______,                                    // lower row
+                                          _______, KC_GRAVE, _______, LSFT(KC_6), LSFT(KC_GRAVE), _______, /** Split **/ _______, _______, _______, _______, _______, _______,                         // lower row
                                           _______, _______, _______, _______, _______, _______, _______, /** Split **/ _______, _______, KC_LSFT, _______, _______, _______, _______,                  // base row
                                           _______, _______, _______, /** Split **/ _______, _______, _______),                                                                                         // thumb cluster
     //
